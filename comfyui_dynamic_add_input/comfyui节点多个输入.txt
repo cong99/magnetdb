@@ -1,0 +1,25 @@
+class CombineConditionings:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": {
+                     "conditioning1": ("CONDITIONING", { "tooltip": "input conditionings. (Connecting to the input slot increases the number of additional slots.)" }),
+                     },
+                }
+
+    OUTPUT_TOOLTIPS = ("Combined conditioning", )
+
+    RETURN_TYPES = ("CONDITIONING", )
+    FUNCTION = "doit"
+
+    CATEGORY = "ImpactPack/Util"
+
+    @staticmethod
+    def doit(**kwargs):
+        res = []
+        for k, v in kwargs.items():
+            res += v
+
+        return (res, )
+		
+		
+ImpactMakeMaskList
